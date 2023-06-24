@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+  db:
+     image: mysql
+     container_name: mysql_db
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: pass
+  web:
+    image: apache
+    build: ./webapp
+    depends_on:
+      - db
+    #container_name: apache_web
+    #deploy:
+      #replicas: 2
+    restart: always
+    ports:
+      - 8090-8095:80
