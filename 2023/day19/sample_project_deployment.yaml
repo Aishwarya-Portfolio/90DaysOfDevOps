@@ -1,7 +1,7 @@
 version : "3.3"
 services:
   web:
-    image: varsha0108/local_django:latest
+    image: todoapp:latest
     deploy:
         replicas: 2
     ports:
